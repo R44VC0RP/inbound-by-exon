@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd .. && bun run build:whop",
+  "installCommand": "cd .. && bun install",
+  "framework": "nextjs"
+}
