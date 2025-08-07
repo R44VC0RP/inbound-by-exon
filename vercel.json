@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "name": "inbound-main-app",
+      "source": "inbound",
+      "framework": "nextjs",
+      "buildCommand": "cd ../.. && bun run build:inbound",
+      "installCommand": "cd ../.. && bun install",
+      "rootDirectory": "inbound"
+    },
+    {
+      "name": "inbound-whop-app",
+      "source": "inbound-whop-app", 
+      "framework": "nextjs",
+      "buildCommand": "cd ../.. && bun run build:whop",
+      "installCommand": "cd ../.. && bun install",
+      "rootDirectory": "inbound-whop-app"
+    }
+  ],
+  "builds": [
+    {
+      "src": "inbound/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "inbound-whop-app/package.json", 
+      "use": "@vercel/next"
+    }
+  ]
+}

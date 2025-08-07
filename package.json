@@ -1,0 +1,38 @@
+{
+  "name": "inbound-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Inbound Email monorepo containing SDK, main app, and Whop app",
+  "workspaces": [
+    "@inboundemail/sdk",
+    "inbound",
+    "inbound-whop-app"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:inbound": "turbo run dev --filter=inbound.exon.dev",
+    "dev:whop": "turbo run dev --filter=inbound-whop-app",
+    "dev:sdk": "turbo run dev --filter=@inboundemail/sdk",
+    "build": "turbo run build",
+    "build:sdk": "turbo run build --filter=@inboundemail/sdk",
+    "build:inbound": "turbo run build --filter=inbound.exon.dev",
+    "build:whop": "turbo run build --filter=inbound-whop-app",
+    "start": "turbo run start --filter=inbound.exon.dev",
+    "start:whop": "turbo run start --filter=inbound-whop-app",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules .turbo"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.5",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "packageManager": "bun@1.2.17",
+  "author": "Inbound Email",
+  "license": "MIT"
+}
